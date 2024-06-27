@@ -6,7 +6,13 @@ import userRoute from "./route/user.route.js"
 import cors from "cors";
 const app = express();
 
-app.use(cors())
+app.use(cors(
+  {
+    origin: ["https://bookstore-frontend-psi.vercel.app/"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+  }
+))
 app.use(express.json())
 
 
@@ -27,7 +33,7 @@ try {
   console.log("error: ", error)
 }
 
-app.use("/book" , bookroute)
+app.use("/book", bookroute)
 app.use("/user", userRoute)
 
 app.listen(port, () => {
