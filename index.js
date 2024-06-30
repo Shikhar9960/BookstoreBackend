@@ -8,7 +8,7 @@ const app = express();
 
 app.use(cors(
   {
-    origin: ["https://bookstore-frontend-psi.vercel.app/"],
+    origin: ["https://bookstorebackend-qdmu.onrender.com/"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   }
